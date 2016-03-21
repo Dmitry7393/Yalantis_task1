@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/line_thickness"
+    android:layout_marginTop="@dimen/divider_virtical_margin"
+    android:layout_marginBottom="@dimen/divider_virtical_margin"
+    android:onClick="onClickToast"
+    android:background="@android:color/darker_gray"/>

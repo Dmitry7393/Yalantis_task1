@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorBackground"
+    android:onClick="onClickToast"
+    android:scrollbars="none"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.yalantis_task1.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickToast"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickToast"
+            android:text="@string/municipal_economy"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/title_text_size"/>
+        <TextView
+            android:id="@+id/label_text_orange"
+            android:text="@string/text_inwork"
+            style="@style/orange_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickToast"
+            />
+        <include
+            layout="@layout/divider"/>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickToast"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_created"
+                android:text="@string/created"
+                android:onClick="onClickToast"
+                style="@style/main_text_left" />
+            <TextView
+                android:id="@+id/text_date_created"
+                android:text="@string/date_created"
+                android:onClick="onClickToast"
+                style="@style/main_text_right" />
+        </RelativeLayout>
+        <include
+            layout="@layout/divider"/>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickToast"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_registrated"
+                android:text="@string/registrated"
+                android:onClick="onClickToast"
+                style="@style/main_text_left" />
+            <TextView
+                android:id="@+id/text_date_registrated"
+                android:text="@string/date_registrated"
+                android:onClick="onClickToast"
+                style="@style/main_text_right" />
+        </RelativeLayout>
+        <include
+            layout="@layout/divider"/>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickToast"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_solve"
+                android:text="@string/solve_until"
+                android:onClick="onClickToast"
+                style="@style/main_text_left" />
+            <TextView
+                android:id="@+id/text_date_solving"
+                android:text="@string/solutions_date"
+                android:onClick="onClickToast"
+                style="@style/main_text_right" />
+        </RelativeLayout>
+        <include
+            layout="@layout/divider"/>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickToast"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_responsible"
+                android:text="@string/responsible"
+                android:onClick="onClickToast"
+                style="@style/main_text_left" />
+            <TextView
+                android:id="@+id/text_department"
+                android:text="@string/department"
+                android:onClick="onClickToast"
+                style="@style/main_text_right" />
+        </RelativeLayout>
+        <include
+            layout="@layout/divider"/>
+        <TextView
+            android:id="@+id/text_description"
+            style="@style/main_text_right"
+            android:text="@string/description"
+            android:onClick="onClickToast"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="onClickToast"
+            android:layout_marginTop="@dimen/margin_top" />
+    </LinearLayout>
+</ScrollView>

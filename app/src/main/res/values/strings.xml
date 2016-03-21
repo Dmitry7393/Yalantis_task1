@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Yalantis_task1</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_actionbar">CE-1257218</string>
+    <string name="text_inwork">In work</string>
+    <string name="municipal_economy">Municipal economy</string>
+    <string name="created">Created</string>
+    <string name="registrated">Registrated</string>
+    <string name="solve_until">Solve until</string>
+    <string name="date_created">25 February 2016</string>
+    <string name="date_registrated">26 February 2016</string>
+    <string name="solutions_date">29 February 2016</string>
+    <string name="responsible">Responsible</string>
+    <string name="department">Dnepropetrovsk MBK()</string>
+    <string name="description">Opened hatch (near the billboard), the area of 18 and 19 trams turn to the Mir avenue from the Donetsk roadway</string>
+</resources>
