@@ -15,7 +15,7 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-
+//[Comment] Wrong toolbar and status bar colors
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +28,11 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true); //[Comment] Can be null
     }
     /** Creating RecyclerView */
     private void initRecyclerView()
-    {
+    { //[Comment] FORMATTING!!!
         RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
@@ -61,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
     }
     /** Returns the array with images */
     private ArrayList<Bitmap> getDataSet() {
-        String [] list_images = listAssetFiles("Pictures");
-        ArrayList results = new ArrayList<Bitmap>();
+        String [] list_images = listAssetFiles("Pictures"); //[Comment] Hardcode
+        ArrayList results = new ArrayList<Bitmap>(); //[Comment] new ArrayList<>(). Use abstraction instead of realization.
         Bitmap bitmap;
         for (int index = 0; index < list_images.length; index++)
-        {
+        { //[Comment] Wring formatting
             bitmap =  loadImageFromAsset("Pictures/" + list_images[index]);
             results.add(index, bitmap);
         }

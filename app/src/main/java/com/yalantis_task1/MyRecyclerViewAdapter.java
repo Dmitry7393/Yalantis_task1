@@ -37,15 +37,15 @@ public class MyRecyclerViewAdapter extends RecyclerView
 
     @Override
     public void onBindViewHolder(DataObjectHolder holder, int position) {
-        holder.imageview.setImageBitmap(mDataset.get(position));  //.getImageUrl()
+        holder.imageview.setImageBitmap(mDataset.get(position));  //.getImageUrl() //[Comment] Use third party library. Not bitmap list
     }
 
-    public void addItem(Bitmap dataObj, int index) {
+    public void addItem(Bitmap dataObj, int index) { //[Comment] Unused
         mDataset.add(dataObj);
         notifyItemInserted(index);
     }
 
-    public void deleteItem(int index) {
+    public void deleteItem(int index) { //[Comment] Unused
         mDataset.remove(index);
         notifyItemRemoved(index);
     }
