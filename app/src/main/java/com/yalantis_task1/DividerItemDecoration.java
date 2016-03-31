@@ -2,14 +2,15 @@ package com.yalantis_task1;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 public class DividerItemDecoration extends RecyclerView.ItemDecoration {
-    private int space_length ;
-    public DividerItemDecoration(int space) {
-        space_length = space;
+    private int mSpaceSize ;
+    public DividerItemDecoration(int spaceSize) {
+        this.mSpaceSize = spaceSize;
     }
-    @Override
-    public void getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent) {
-        outRect.right = space_length;
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state)
+    {
+        outRect.right = mSpaceSize;
     }
 }

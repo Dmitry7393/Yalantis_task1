@@ -1,58 +1,43 @@
 package com.yalantis_task1;
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import java.util.ArrayList;
 
-public class MyRecyclerViewAdapter extends RecyclerView
-        .Adapter<MyRecyclerViewAdapter
-        .DataObjectHolder> {
-    private ArrayList<Bitmap> mDataset;
-    public static class DataObjectHolder extends RecyclerView.ViewHolder {
-        ImageView imageview;
+import com.squareup.picasso.Picasso;
 
-        public DataObjectHolder(View itemView) {
-            super(itemView);
-            imageview = (ImageView) itemView.findViewById(R.id.recyclerviewimages);
-        }
+public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewHolder> {
+    private int[] mListImages;
+    private Context mContext;
 
-    }
-
-    public MyRecyclerViewAdapter(ArrayList<Bitmap> myDataset) {
-        mDataset = myDataset;
+    public MyRecyclerViewAdapter(int[] mListImages, Context mContext) {
+        this.mContext = mContext;
+        this.mListImages = mListImages;
     }
     @Override
-    public DataObjectHolder onCreateViewHolder(ViewGroup parent,
-                                               int viewType) {
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recyclerview_item, parent, false);
-
-        DataObjectHolder dataObjectHolder = new DataObjectHolder(view);
-        return dataObjectHolder;
+        return new MyViewHolder(view);
     }
-
     @Override
-    public void onBindViewHolder(DataObjectHolder holder, int position) {
-        holder.imageview.setImageBitmap(mDataset.get(position));  //.getImageUrl()
+    public void onBindViewHolder(MyViewHolder holder, int position) {
+        Picasso.with(mContext).load(mListImages[position]).fit().centerInside().into(holder.imageViewIcon);
     }
-
-    public void addItem(Bitmap dataObj, int index) {
-        mDataset.add(dataObj);
-        notifyItemInserted(index);
+    class MyViewHolder extends RecyclerView.ViewHolder
+    {
+        ImageView imageViewIcon;
+        public MyViewHolder(View itemView)
+        {
+            super(itemView);
+            this.imageViewIcon = (ImageView) itemView.findViewById(R.id.recyclerviewimages);
+        }
     }
-
-    public void deleteItem(int index) {
-        mDataset.remove(index);
-        notifyItemRemoved(index);
-    }
-
     @Override
     public int getItemCount() {
-        return mDataset.size();
+        return mListImages.length;
     }
-
 }
