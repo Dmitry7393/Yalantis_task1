@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     }
     /** Creating RecyclerView */
     private void initRecyclerView(int[] mListImages)
-    {
+    { //[Comment] What's wrong with formatting??? Ctrl + Shift + L. It's not a C++.
         RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         if(mRecyclerView != null)
         {
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
             mRecyclerView.setAdapter(mAdapter);
             RecyclerView.ItemDecoration itemDecoration =
-                    new DividerItemDecoration(15);
+                    new DividerItemDecoration(15); //[Comment] Magic number
             mRecyclerView.addItemDecoration(itemDecoration);
         }
     }
